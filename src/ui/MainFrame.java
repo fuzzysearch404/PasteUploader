@@ -87,7 +87,7 @@ public class MainFrame extends JFrame implements KeyListener {
 		setTitle("PasteUploader");
 		addKeyListener(this);
 		setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
+		setFocusTraversalKeysEnabled(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
 		new DropTarget(this, dragAndDroplistener);
@@ -95,7 +95,7 @@ public class MainFrame extends JFrame implements KeyListener {
 		// Start building the window contents
 		build();
 		pack();
-        setLocationRelativeTo(null);
+		setLocationRelativeTo(null);
 		
 		// Ready to display
 		setVisible(true);
@@ -118,7 +118,7 @@ public class MainFrame extends JFrame implements KeyListener {
 			// Try loading in the clipboard contents as an image
 			this.uploadBufferedImage = (BufferedImage) CLIPBOARD.getData(DataFlavor.imageFlavor);
 			mediaPreview = new JLabel(new ImageIcon(uploadBufferedImage));
-			
+
 			Main.uploadStrategy = UploadStrategy.PASTE_IMAGE;
 		} catch (Exception e) {
 			try {
@@ -248,17 +248,17 @@ public class MainFrame extends JFrame implements KeyListener {
 		createSelectFileButton();
 		add(buttonsPanel, BorderLayout.SOUTH);
 	}
-	
+
 	private void rebuild() {
-        getContentPane().removeAll();
-        buttonsPanel.removeAll();
-        build();
-        
-        getContentPane().revalidate();
-        getContentPane().repaint();
-        pack();
+		getContentPane().removeAll();
+		buttonsPanel.removeAll();
+		build();
+
+		getContentPane().revalidate();
+		getContentPane().repaint();
+		pack();
 	}
-	
+
 	@Override
 	public void keyTyped(KeyEvent e) {}
 

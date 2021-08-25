@@ -31,13 +31,13 @@ public class FileUploader {
 	
 	public FileUploader(BufferedImage bufferedImage) throws IOException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ImageIO.write(bufferedImage, Main.DEFAULT_IMAGE_UPLOAD_EXTENSION, baos);
-        this.bytes = baos.toByteArray();
+		ImageIO.write(bufferedImage, Main.DEFAULT_IMAGE_UPLOAD_EXTENSION, baos);
+		this.bytes = baos.toByteArray();
 
-        if (Main.customUploadFileName != null && !Main.customUploadFileName.isBlank())
-        	this.fileName = Main.customUploadFileName;
-        else
-        	this.fileName = Main.DEFAULT_IMAGE_UPLOAD_FILENAME + '.' + Main.DEFAULT_IMAGE_UPLOAD_EXTENSION;
+		if (Main.customUploadFileName != null && !Main.customUploadFileName.isBlank())
+			this.fileName = Main.customUploadFileName;
+		else
+			this.fileName = Main.DEFAULT_IMAGE_UPLOAD_FILENAME + '.' + Main.DEFAULT_IMAGE_UPLOAD_EXTENSION;
 	}
 	
 	public FileUploader(String uploadString) throws IOException {
