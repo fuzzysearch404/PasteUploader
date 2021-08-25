@@ -1,0 +1,8 @@
+# VS Code
+.settings
+# Eclipse
+.classpath
+.project
+# Maven & Java
+/target
+/bin
